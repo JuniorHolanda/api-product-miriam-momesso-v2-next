@@ -1,10 +1,9 @@
 import express from 'express';
+import router from './routers/routerProduct.ts';
 
 const app = express();
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.status(200).send('rota raiz')
-})
+app.use('/', router)
 
 export default app;
