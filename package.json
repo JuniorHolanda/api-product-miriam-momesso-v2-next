@@ -1,33 +1,29 @@
 {
-  "name": "api-products-miriam-momesso-v2-next",
+  "name": "api-product-miriam-momesso-v2-next",
   "version": "2.0.0",
-  "description": "nova API CRUD de produtos do catalogo V2 da  empresa Miriam Momesso integrada com MongoDB",
+  "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start:dev": "nodemon --watch src --exec ts-node src/index.ts -e ts",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write ."
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JuniorHolanda/api-product-miriam-momesso-v2-next.git"
   },
-  "author": "Pedro de Holanda",
+  "keywords": [],
+  "author": "pedro de holanda",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JuniorHolanda/api-product-miriam-momesso-v2-next/issues"
   },
   "homepage": "https://github.com/JuniorHolanda/api-product-miriam-momesso-v2-next#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.53.1",
-    "@typescript-eslint/parser": "^8.53.1",
-    "eslint": "^9.39.2",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.5",
-    "nodemon": "^3.1.11",
-    "prettier": "^3.8.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "@types/express": "^5.0.6"
   }
 }
