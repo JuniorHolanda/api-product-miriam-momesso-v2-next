@@ -1,2 +1,0 @@
-// centraliza as rotas
-
