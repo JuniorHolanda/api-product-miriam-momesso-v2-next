@@ -56,7 +56,7 @@ export default class ProductController {
         }
     };
 
-        static async deleteProduct(req: Request, res: Response):Promise<void>{
+    static async deleteProduct(req: Request, res: Response):Promise<void>{
         try{
             const id = req.params.id;
             await Product.findByIdAndDelete(id)
@@ -64,5 +64,16 @@ export default class ProductController {
         } catch (error) {
             handleErrorResponse(res, error, 'falha ao deleta livro')
         }
-    }
+    };
+
+    // rota para sleep manter a api acordada no plano gratuíto do Render
+    static async routWakeUp(req: Request, res: Response):Promise<void>{
+        try{
+            res.status(200).json({status: 'ok'});
+        } catch (error) {
+            handleErrorResponse(res, error, 'falha ao ao acordar api')
+        }
+    };
+
+    
 }
