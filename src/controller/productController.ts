@@ -23,6 +23,17 @@ export default class ProductController {
         }
     };
 
+    static async getOneProduct(req: Request, res: Response): Promise<void> {
+        try{
+            const { id } = req.params;
+            const oneProduct = await Product.findById(id);
+            res.status(200).json({oneProduct});
+
+        } catch (error) {
+             handleErrorResponse(res, error, "Erro ao buscar produto");
+        }
+    };
+
     static async createProduct(req: Request, res: Response) {
         try {
             const newProduct = await Product.create(req.body);
@@ -32,6 +43,26 @@ export default class ProductController {
             })
         } catch (error) {
             handleErrorResponse(res, error, "Erro ao cadastrar produtos");
+        }
+    };
+
+    static async updateProduct(req: Request, res: Response):Promise<void>{
+        try{
+            const id = req.params.id;
+            await Product.findByIdAndUpdate(id, req.body)
+            res.status(200).json({message: 'produto atualizado'})
+        } catch (error) {
+            handleErrorResponse(res, error, 'falha ao atualizarlivro')
+        }
+    };
+
+        static async deleteProduct(req: Request, res: Response):Promise<void>{
+        try{
+            const id = req.params.id;
+            await Product.findByIdAndDelete(id)
+            res.status(200).json({message: 'produto excluido com sucesso'})
+        } catch (error) {
+            handleErrorResponse(res, error, 'falha ao deleta livro')
         }
     }
 }
