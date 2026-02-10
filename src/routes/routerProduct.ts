@@ -10,4 +10,7 @@ router.post('/produtos', ProductController.createProduct);
 router.put('/produtos/:id', ProductController.updateProduct);
 router.delete('/produtos/:id', ProductController.deleteProduct);
 
+//rota para sleep
+router.get('/health', ProductController.routWakeUp);
+
 export default router;
