@@ -1,8 +1,8 @@
 import 'dotenv/config';
-import app from "./src/app.ts";
-import connectDb from "./src/config/db.ts";
+import app from "./app.js";
+import connectDb from "./config/db.js";
 
-const PORT = 8000;
+const PORT = process.env.PORT || 3000;
 
 async function start() {
     try {

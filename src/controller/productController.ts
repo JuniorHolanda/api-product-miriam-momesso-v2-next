@@ -1,4 +1,4 @@
-import Product from "../models/Product.ts";
+import Product from "../models/Product";
 import { Request, Response } from "express";
 
 // Retorna mensagem de erro convertida em string.
