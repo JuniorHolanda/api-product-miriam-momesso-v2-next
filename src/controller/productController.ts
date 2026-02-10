@@ -23,6 +23,16 @@ export default class ProductController {
         }
     };
 
+    static async getOneProduct(req: Request, res: Response): Promise<void> {
+        try{
+            const id = req.params.id;
+            const oneProduct = await Product.findById({id});
+            res.status(200).json({oneProduct});
+        } catch (error) {
+             handleErrorResponse(res, error, "Erro ao buscar produto");
+        }
+    };
+
     static async createProduct(req: Request, res: Response) {
         try {
             const newProduct = await Product.create(req.body);
@@ -33,5 +43,5 @@ export default class ProductController {
         } catch (error) {
             handleErrorResponse(res, error, "Erro ao cadastrar produtos");
         }
-    }
+    };
 }
