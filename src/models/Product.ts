@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema({
     smalltext: {type: String, required: true},
     text: {type: String, required: true},
     category: {
-        main: {type: String, required: true},
+        main: [{type: String, required: true}],
         holiday: [{type: String}]
     },
     measure: [{type: String, required: true}],
