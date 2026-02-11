@@ -10,6 +10,7 @@ const productSchema = new mongoose.Schema({
         main: [{type: String, required: true}],
         holiday: [{type: String}]
     },
+    code: {type: String},
     measure: [{type: String, required: true}],
     gallery: [
         {
