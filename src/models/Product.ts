@@ -8,7 +8,8 @@ const productSchema = new mongoose.Schema({
     text: {type: String, required: true},
     category: {
         main: [{type: String, required: true}],
-        holiday: [{type: String}]
+        holiday: [{type: String}],
+        imported: [{type: String}],
     },
     code: {type: String},
     measure: [{type: String, required: true}],
