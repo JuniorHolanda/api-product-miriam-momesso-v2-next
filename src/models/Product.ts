@@ -19,7 +19,8 @@ const productSchema = new mongoose.Schema({
         altimg: String
         }
     ],
-    like: {type: Number, default: 0}
+    like: {type: Number, default: 0},
+    slug: {type: String, required: true}
 })
 
 const Products = mongoose.model('Products', productSchema)
